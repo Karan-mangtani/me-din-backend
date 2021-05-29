@@ -14,4 +14,5 @@ step 2: ./dev.sh seed-all
 
 
 Node Ts Setup - https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-typescript
+NodeJS Compose Setup - https://www.cloudbees.com/blog/using-docker-compose-for-nodejs-development/
 Node express postgres sequilize - https://blog.echobind.com/a-guide-for-restful-apis-with-node-sequelize-postgres-63636d026d5d

@@ -1,0 +1,27 @@
+npx sequelize-cli model:generate --name User --attributes id:integer,name:string,contact:string,email:string,profile_pic:string,gender:string,dob:string,created_at:date,blood_group:string
+
+npx sequelize-cli model:generate --name UserType --attributes typeId:integer,userId:integer
+
+npx sequelize-cli model:generate --name Type --attributes id:integer,name:Integer
+
+npx sequelize-cli model:generate --name Hospital --attributes id:integer,address:string,speciality:string
+
+npx sequelize-cli model:generate --name Doctor --attributes userId:integer,hospitalId:integer,practising_from:date,speciality:string,degree:string
+
+npx sequelize-cli model:generate --name UserDonatable --attributes d_id:integer,userId:integer
+
+npx sequelize-cli model:generate --name Donatables --attributes id:integer,name:string
+
+npx sequelize-cli model:generate --name UserPosts --attributes userId:integer,postId:integer
+
+npx sequelize-cli model:generate --name Post --attributes id:integer,title:string,description:string,posted_on:date,location:string,valid_till:date,asking_for:string,likes:integer
+
+npx sequelize-cli model:generate --name PostComments --attributes postId:integer,commentId:integer
+
+npx sequelize-cli model:generate --name PostLikes --attributes postId:integer,userId:integer,liked_on:date
+
+npx sequelize-cli model:generate --name Comment --attributes id:integer,comment:string,posted_on:date
+
+npx sequelize-cli model:generate --name PostMedia --attributes postId:integer,mediaId:integer
+
+npx sequelize-cli model:generate --name Media --attributes id:integer,type:string,url:string 

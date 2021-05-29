@@ -1,4 +1,9 @@
 version: "3.2"
+
+volumes:
+  web_data:
+    external: true
+
 services:
   web:
     container_name: app
@@ -6,10 +11,10 @@ services:
       context: ./
       dockerfile: devserver.Dockerfile
     volumes:
-      - ./:/usr/src/app
+      - ./:/app
+      - /app/node_modules
     ports:
       - "4000:4000"
-    command: bash -c 'yarn devstart'
     depends_on: 
       - postgres
     env_file:
@@ -24,7 +29,7 @@ services:
     ports:
       - "5400:5432"
     volumes:
-      - ${HOME}/12/:/var/lib/postgresql
+      - web_data:/var/lib/postgresql:rx
     env_file:
       ./dev.env
     networks:
