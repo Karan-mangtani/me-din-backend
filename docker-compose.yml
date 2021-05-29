@@ -1,0 +1,36 @@
+version: "3.2"
+services:
+  web:
+    container_name: app
+    build:
+      context: ./
+      dockerfile: devserver.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "4000:4000"
+    command: bash -c 'yarn devstart'
+    depends_on: 
+      - postgres
+    env_file:
+        ./dev.env
+    networks:
+      - elk
+
+
+  postgres:
+    container_name: postgres_1
+    image: kartoza/postgis:12.1
+    ports:
+      - "5400:5432"
+    volumes:
+      - ${HOME}/12/:/var/lib/postgresql
+    env_file:
+      ./dev.env
+    networks:
+      - elk
+
+networks:
+  elk:
+    driver: bridge
+   

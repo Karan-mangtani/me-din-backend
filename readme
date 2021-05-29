@@ -1,0 +1,17 @@
+SETUP
+step 1: ./dev.sh build
+step 2: ./dev.sh create-db // only first time
+step 3: ./dev.sh up 
+
+to check containers - docker-compose ps
+to add model - npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+to run migration - ./dev.sh migrate
+
+creating seeds(insert default data)
+step 1: ./dev.sh g-seed ${name}
+step 2: ./dev.sh seed-all
+
+
+
+Node Ts Setup - https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-typescript
+Node express postgres sequilize - https://blog.echobind.com/a-guide-for-restful-apis-with-node-sequelize-postgres-63636d026d5d
